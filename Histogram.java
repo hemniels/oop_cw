@@ -1,9 +1,4 @@
-/* Programm enthält keine print Statement enstprechend der Aufgabenstellung.
-Letzte for-schleife durchläuft ein sortiertes Array und erhöht eine counter Variable.
-Jedoch ist mir keine Schleifen-Logik eingefallen, um mit einem print Statement jede Zahl nur einmal auszugeben.
-Jedes getestete Print Statement gab dann bspw. 5x die gleiche Zahl aus, statt wie gefordert nur einmal.
-Bitte um Verbersserungsvorschlag. Ferner wurde hier java.util benutzt,
-Um auf der Kommandozeile das sortierte Array auszugeben, sonst fuer keine anderen Funktionen */
+/* main method needs rework */
 
 import java.util.*;
 
