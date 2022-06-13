@@ -1,11 +1,11 @@
 public class TestList{
-	int xz;
-	String zz;
-	int zx;
+	double x_value;
+	double y_value;
+	int time;
 	
-	TestList(int xz, String zz, int zx){
-		this.xz = xz;
-		this.zz = zz;
-		this.zx = zx;
+	TestList(double x_value, double y_value, int time){
+		this.x_value = x_value;
+		this.y_value = y_value;
+		this.time = time;
 	}
 }

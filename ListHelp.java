@@ -3,36 +3,20 @@ import java.util.*;
 
 public class ListHelp{
 	
-	int n = 12;
+	static addElem(double x_value, double y_value, int time){}
 	
-			void addValue(int zx, String xx, int xz){
-			ArrayList<TestList> test = new ArrayList<>();
-			
-			for (int i = 0; i < n; i++){
-				test.add(new TestList(zx,xx,xz));
-			}
-			
-			printValue(test);
-		}
-		
-		void printValue(ArrayList<TestList> list){
-			for (int i = 0; i < n; i++){
-				TestList test = list.get(i);
-				
-				System.out.println(test.zx + " " + test.zz + " " + test.xz);
-			}
-		}
-		
+	static createWaypointList<ArrayList<Waypoint>>;
+	
+
+
 	public static void main(String[] args){
 		
-		/* BUGGY MAIN METHOD MAYBE ADDVALUE FUNKTION
-		int zx = 10;
-		String zz = "Subhuman";
-		int xz = 150;
+		/* PRINTS + IO ??
+
+		++ Gesamtstrecke zurueckgelegt
+		++ Durchschnittsgeschwindigkeit pro Stunde
+		++ Kartenskalierung ist 1 = 0,1km
 		
-		TestList test = new TestList();
-		
-		test.addValue(zx,zz,xz);
 		*/
 		
 		
