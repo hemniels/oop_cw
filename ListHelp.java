@@ -3,14 +3,8 @@ import java.util.*;
 
 public class ListHelp{
 	
-	void addElem(ArrayList<TestList> list, double x_value, double y_value, int time){
-			
-			list.add(new TestList(x_value, y_value, time));
-			
-	}
 	
-	
-	void IOWaypoint(double xpos, double ypos, int timestamp){
+	void IOWaypoint(ArrayList<TestList> list, double xpos, double ypos, int timestamp){
 
 			System.out.println("Geben Sie einen Wegpunkt(Xpos/Ypos/Timestamp) ein");
 			
@@ -41,10 +35,10 @@ public class ListHelp{
 
 		
 		
-		IOTest IOTest = new IOTest();
+		ListHelp ListHelp = new ListHelp();
 
 		while( TEST_SIZE < 10){
-			IOTest.IOWaypoint(DEFAULT_ARRAY, DEFAULT_XPOS, DEFAULT_YPOS, DEFAULT_TIMESTAMP);
+			ListHelp.IOWaypoint(DEFAULT_ARRAY, DEFAULT_XPOS, DEFAULT_YPOS, DEFAULT_TIMESTAMP);
 			
 			TEST_SIZE++;
 		}
