@@ -23,10 +23,7 @@ public class ListHelp{
 			System.out.println("ENTER TIMESTAMP");
 			timestamp = In.readInt();
 			
-			System.out.println(xpos + " " + ypos + " " + timestamp);
-			System.out.println(xpos);
-			System.out.println(ypos);
-			System.out.println(timestamp);
+			list.add(new TestList(xpos,ypos,timestamp));
 	}
 	
 	
@@ -37,30 +34,31 @@ public class ListHelp{
 		double DEFAULT_XPOS = 0;
 		double DEFAULT_YPOS = 0;
 		int DEFAULT_TIMESTAMP = 0;
-				
-		/* PRINTS + IO ??
+		int TEST_SIZE = 0;
+		
+		ArrayList<TestList> DEFAULT_ARRAY = new ArrayList<TestList>();
+		
 
-		++ Gesamtstrecke zurueckgelegt
-		++ Durchschnittsgeschwindigkeit pro Stunde
-		++ Kartenskalierung ist 1 = 0,1km
-		
-		*/
 		
 		
-		ArrayList<TestList> testArray = new ArrayList<TestList>();
-		ListHelp ListHelp = new ListHelp();
-		
-		ListHelp.IOWaypoint(DEFAULT_XPOS, DEFAULT_YPOS, DEFAULT_TIMESTAMP);
-		
-		
-		
-		for(int i = 0; i < testArray.size(); i++){
+		IOTest IOTest = new IOTest();
+
+		while( TEST_SIZE < 10){
+			IOTest.IOWaypoint(DEFAULT_ARRAY, DEFAULT_XPOS, DEFAULT_YPOS, DEFAULT_TIMESTAMP);
 			
-			TestList test = testArray.get(i);
+			TEST_SIZE++;
+		}
+		
+		
+		
+		for(int i = 0; i < DEFAULT_ARRAY.size(); i++){
+			
+			TestList test = DEFAULT_ARRAY.get(i);
 			
 			System.out.println(test.x_value + " " + test.y_value + " " + test.time);
 			
 		}
+		
 		
 		
 	}
