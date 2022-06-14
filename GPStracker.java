@@ -1,3 +1,5 @@
+//FINAL VERSION
+
 import java.util.*;
 
 
@@ -21,16 +23,46 @@ public class GPStracker{
 	}
 	
 	
+	double TotalDistance(ArrayList<WayPoint> list, int size){
+			double distance = 0;
+			
+			for(int i = 0; i < size; i++){
+				distance = list.get(i).x_value+distance;
+			}
+			return distance;
+	}
+	
+	double AverageSpeed(ArrayList<WayPoint> list, int size){
+			double distance = 0;
+			double avg = 0;
+			int t = 0;
+			
+			for(int i = 0; i < size; i++){
+				distance = list.get(i).x_value+distance;
+				return distance;
+			}
+			for (int j = 0; j < size; j++){
+				t = list.get(j).time / 3600;
+				return t;
+			}
+			
+			avg = (double) distance / t;
+			return avg;
+			
+	}
+	
 
 
 	public static void main(String[] args){
+		
 		double DEFAULT_XPOS = 0;
 		double DEFAULT_YPOS = 0;
 		int DEFAULT_TIMESTAMP = 0;
-		int DEFAULT_SIZE = 0;
 		
+		int DEFAULT_SIZE = 0;
 		int USER_SIZE = 0;
-		int TOTAL_DISTANCE = 0;
+		
+		double TOTAL_DISTANCE = 0;
 		double AVERAGE_SPEED = 0;
 		
 		ArrayList<WayPoint> DEFAULT_ARRAY = new ArrayList<WayPoint>();
@@ -39,6 +71,7 @@ public class GPStracker{
 		
 		System.out.println("ENTER AMOUNT OF ROUTE'S WAYPOINTS: ");
 		USER_SIZE = In.readInt();
+		System.out.println("-----------------------------------");
 
 
 		while(DEFAULT_SIZE < USER_SIZE){
@@ -58,8 +91,13 @@ public class GPStracker{
 			
 		}
 		
+	 
+		TOTAL_DISTANCE = GPStracker.TotalDistance(DEFAULT_ARRAY, USER_SIZE) / 10;
+		AVERAGE_SPEED = GPStracker.AverageSpeed(DEFAULT_ARRAY, USER_SIZE);
+		
+		
 		System.out.println("------------------------------------------");
-		System.out.println("YOUR ROUTE HAS A TOTAL DISTANCE OF : " + TOTAL_DISTANCE);
+		System.out.println("YOUR ROUTE HAS A TOTAL DISTANCE OF : " + TOTAL_DISTANCE + "km");
 		
 		System.out.println("YOUR AVERAGE SPEED (KM/H) WAS : " + AVERAGE_SPEED);
 	}

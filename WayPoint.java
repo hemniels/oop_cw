@@ -1,3 +1,5 @@
+//FINAL VERSION
+
 public class WayPoint{
 	double x_value;
 	double y_value;
