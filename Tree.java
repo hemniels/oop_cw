@@ -37,10 +37,19 @@ class Tree<V extends Comparable<V>> {
 			nt = nt.right;
 		}
 	}
-
-
+	
+	/* 
+	TODO 
+	
+	void prrintNodes();
+	
+	void printNodes(min, max);
+	
+	*/
+	
 	public static void main(String[] args){
 		
+		//INTEGER TREE
 		Tree<Integer> BST = new Tree<>();
 		
 		BST.insert(12);
@@ -48,12 +57,28 @@ class Tree<V extends Comparable<V>> {
 		BST.insert(125);
 		BST.insert(5);
 		BST.insert(1235123);
+		
+		System.out.println(BST);
+		
+		//STRING TREE
+		Tree<String> STree = new Tree<>();
+		
+		STree.insert("Max");
+		STree.insert("Meyer");
+		STree.insert("Ewald");
+		STree.insert("Pony");
+		STree.insert("YEA");
+		STree.insert("FARMER");
+		STree.insert("SONG");
+		
+		System.out.println(STree);
+		
+		/* 
+		STree.printNodes();
+		System.out.println("-----------------------");
+		BST.printNodes();
+		
+		BST.printNodes(12, 5);
+		*/
 	}
-	
-	
-   /* 
-	TODO add object method printNodes:
-    - to print all values in the tree in ascending order
-    - to print only values between min and max (inclusive)
-	*/
 }
