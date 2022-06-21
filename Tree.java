@@ -27,30 +27,53 @@ class Tree<V extends Comparable<V>> {
 	void insert (V val) {
 		
 		TreeNode nt = new TreeNode(val);
-		int cmp = val.compareTo(nt.val);
 		
-		if(cmp == 0){
-			nt = root;
-		}else if(cmp < 0){
-			nt = nt.left;
-		}else{
-			nt = nt.right;
+		if(root == null){
+			root = nt;
+		}
+		while(root != null){
+		int cmp = val.compareTo(root.val);
+		if (cmp == 0) root.left = nt;
+		
+		if (cmp < 0){
+				root.left = nt;
+			}
+		if (cmp > 0){
+				root.right = nt;
+			}
+		break;
 		}
 	}
 	
-	/* 
-	TODO 
+	void printNodes(TreeNode node){
 	
-	void prrintNodes();
+		if (node == null){ return; }
+		System.out.println(node.val + " ");
+		printNodes(node.left);
+		printNodes(node.right);
+	}
 	
-	void printNodes(min, max);
-	
-	*/
+	void printNodes(TreeNode node, TreeNode min, TreeNode max){
+		
+		int cmpMin = node.val.compareTo(min.val);
+		int cmpMax = node.val.compareTo(max.val);
+		
+		if (node == null){ return; }
+		
+		while (cmpMin >= 0 && cmpMax < 0){
+			System.out.println(node.val + " ");
+			printNodes(node.left);
+			printNodes(node.right);
+			break;
+		}
+	}
 	
 	public static void main(String[] args){
 		
+		
 		//INTEGER TREE
 		Tree<Integer> BST = new Tree<>();
+		
 		
 		BST.insert(12);
 		BST.insert(123);
@@ -58,7 +81,6 @@ class Tree<V extends Comparable<V>> {
 		BST.insert(5);
 		BST.insert(1235123);
 		
-		System.out.println(BST);
 		
 		//STRING TREE
 		Tree<String> STree = new Tree<>();
@@ -66,19 +88,22 @@ class Tree<V extends Comparable<V>> {
 		STree.insert("Max");
 		STree.insert("Meyer");
 		STree.insert("Ewald");
-		STree.insert("Pony");
-		STree.insert("YEA");
-		STree.insert("FARMER");
-		STree.insert("SONG");
+		STree.insert("TEST12");
 		
-		System.out.println(STree);
 		
-		/* 
-		STree.printNodes();
+		
+		
+		 
+		System.out.println("String Tree printed out: ");
+		STree.printNodes(STree.root);
+		
 		System.out.println("-----------------------");
-		BST.printNodes();
 		
-		BST.printNodes(12, 5);
-		*/
+		System.out.println("Integer Tree printed out: ");
+		BST.printNodes(BST.root);
+		
+		System.out.println("-----------------------");
+		
+		BST.printNodes(BST.root, BST.root.left, BST.root.right);
 	}
 }
